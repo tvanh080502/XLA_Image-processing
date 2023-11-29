@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        form {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin: 10px 2px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #3498db;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-group {
+            margin: 10px;
+            text-align: center;
+        }
+
+        label,
+        p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Image Processing</h1>
+    </header>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for m in messages %}
+                <p>{{m}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <a class="btn btn-primary" href="/">Back</a>
+
+    <div class="images">
+        {% if originalImage %}
+            <div class="image-group">
+                <label for="originalImage">Original Image</label>
+                <img src="data:image/jpeg;base64,{{originalImage}}" alt="Original Image">
+            </div>
+        {% endif %}
+
+        {% if processedImage %}
+            <div class="image-group">
+                <label for="processedImage">Processed Image</label>
+                <img src="data:image/jpeg;base64,{{processedImage}}" alt="Processed Image">
+            </div>
+        {% endif %}
+
+        {% if encoded %}
+            <div class="image-group">
+                <label for="encoded">Encoded Matrix</label>
+                {% if rlc %}
+                    <p>{{encoded}}</p>
+                {% endif %}
+                {% if huffman %}
+                    <p>Số bit sau khi nén: {{encoded}}</p>
+                {% endif %}
+                {% if lzw %}
+                    <p>Kích thước dữ liệu sau khi nén: {{encoded}}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        var currentURL = window.location.href;
+        path = currentURL.substring(21);
+        const form = document.querySelector("form")
+        form.setAttribute("action", path)
+    </script>
+</body>
+
+</html>

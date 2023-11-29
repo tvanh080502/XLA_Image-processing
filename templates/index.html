@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLA</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: url('https://flatsome.xyz/wp-content/uploads/2022/01/hinh-nen-tet-dep-3-1024x525.jpg');
+            background-size: cover;
+        }
+        
+
+        label {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .btn {
+            color: white;
+            border-radius: 5px;
+            padding: 6px 12px;
+            border: none;
+            font-size: 18px;
+            box-sizing: border-box;
+            margin: 6px 2px;
+            cursor: pointer;
+        }
+
+        .btn-success {
+            background: #4CAF50; /* Green */
+        }
+
+        .btn-primary {
+            background: #2196F3; /* Blue */
+        }
+
+        .btn-warning {
+            background: #FFC107; /* Yellow */
+        }
+
+        .btn-danger {
+            background: #FF5252; /* Red */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="group">
+            <label for="">Toán tử điểm ảnh</label>
+            <br>
+            <a class="btn btn-primary" href="/negative">Biến đổi âm bản</a>
+            <br>
+            <a class="btn btn-primary" href="/threshold">Phân ngưỡng</a>
+            <br>
+            <a class="btn btn-primary" href="/logarith">Biến đổi Logarith</a>
+            <br>
+            <a class="btn btn-primary" href="/gamma">Biến đổi hàm mũ</a>
+            <br>
+            <a class="btn btn-primary" href="/balance">Cân bằng lược đồ xám</a>
+            <br>
+        </div>
+        <div class="group">
+            <label for="">Bộ lọc</label>
+            <br>
+            <a class="btn btn-primary" href="/weighted_average">Bộ lọc trung bình có trọng số</a>
+            <br>
+            <a class="btn btn-primary" href="/median">Bộ lọc trung vị</a>
+            <br>
+            <a class="btn btn-primary" href="/knn_average">Bộ lọc trung bình K giá trị gần nhất</a>
+            <br>
+        </div>
+        <div class="group">
+            <label for="">Phát hiện biên</label>
+            <br>
+            <a class="btn btn-primary" href="/roberts">Toán tử Roberts</a>
+            <br>
+            <a class="btn btn-primary" href="/sobel">Toán tử Sobel</a>
+            <br>
+            <a class="btn btn-primary" href="/prewitt">Toán tử Prewitt</a>
+            <br>
+            <a class="btn btn-primary" href="/laplacian">Toán tử Laplacian</a>
+            <br>
+            <a class="btn btn-primary" href="/canny">Phương pháp Canny</a>
+            <br>
+            <a class="btn btn-primary" href="/otsu">Thuật toán OTSU</a>
+            <br>
+            <!-- <a class="btn btn-primary" href="/isodata">Thuật toán Đẳng liệu (isodata)</a>
+            <br> -->
+        </div>
+        <div class="group">
+            <label for="">Nén ảnh</label>
+            <br>
+            <a class="btn btn-primary" href="/rlc">Nén ảnh sử dụng RLC</a>
+            <br>
+            <a class="btn btn-primary" href="/huffman">Nén ảnh sử dụng Huffman</a>
+            <br>
+            <a class="btn btn-primary" href="/lzw">Nén ảnh sử dụng LZW</a>
+            <br>
+        </div>
+        <div class="group">
+            <label for="">Xử lí hình thái</label>
+            <br>
+            <a class="btn btn-primary" href="/erosion">Co ảnh</a>
+            <br>
+            <a class="btn btn-primary" href="/dilation">Giãn ảnh</a>
+            <br>
+            <a class="btn btn-primary" href="/opening">Mở ảnh</a>
+            <br>
+            <a class="btn btn-primary" href="/closing">Đóng ảnh</a>
+            <br>
+        </div>
+    </div>
+
+</body>
+
+</html>
